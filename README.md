@@ -1,4 +1,5 @@
-# Análise e Previsão de Fluxo de Clientes para Restaurantes "Chimi & Churri" e "Assa Frão"
+# Estudo Series Temporais
+# Análise e Previsão de Fluxo de Clientes para Restaurantes
 
 ---
 
