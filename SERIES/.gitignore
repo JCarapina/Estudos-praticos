@@ -1,0 +1,66 @@
+# ==================================
+# 1. Ambientes Virtuais e Cache
+# ==================================
+
+# Ambiente virtual Python (venv, etc.)
+venv/
+.venv/
+
+# Cache de compilação do Python
+__pycache__/
+*.pyc
+
+# Arquivos de cache do VS Code
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/*.code-workspace
+
+# Arquivos de cache do Jupyter Notebook
+.ipynb_checkpoints
+
+# Arquivos de sistema e OS (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+# ==================================
+# 2. Dados e Modelos (Arquivos Grandes)
+# ==================================
+
+# IMPORTANTE: Arquivos de dados de entrada/saída (CSV, Excel, etc.)
+# É prática padrão NÃO versionar dados grandes no Git/GitHub.
+data/
+datasets/
+raw_data/
+*.csv
+*.xlsx
+*.parquet
+
+# Modelos de Machine Learning Treinados
+# Os modelos podem ser gigantes e não devem ser versionados.
+models/
+*.model
+*.pkl
+*.h5
+*.joblib
+# ==================================
+# 3. Logs e Saídas de Experimentos
+# ==================================
+
+# Logs de treino (TensorBoard, MLflow, etc.)
+logs/
+runs/
+
+# Diretórios temporários ou de saída
+tmp/
+output/
+# ==================================
+# 4. Ferramentas Específicas
+# ==================================
+
+# Pytest e cobertura de testes
+.pytest_cache/
+htmlcov/
+
+# Ferramentas de Notebook (se não estiver usando venv)
+.idea/
