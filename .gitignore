@@ -35,6 +35,7 @@ raw_data/
 *.csv
 *.xlsx
 *.parquet
+*.docx
 
 # Modelos de Machine Learning Treinados
 # Os modelos podem ser gigantes e não devem ser versionados.
