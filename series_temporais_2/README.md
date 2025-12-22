@@ -1,71 +1,55 @@
-# Estudo Series Temporais
-# Análise e Previsão de Fluxo de Clientes para Restaurantes
+# Previsão Climática: Análise e Forecasting de Temperaturas (3 Fazendas)
 
----
+## Objetivo do Projeto
+Desenvolver um modelo de Ciência de Dados capaz de analisar o histórico de temperaturas e gerar previsões para os próximos **3 anos (2024-2027)** para três fazendas distintas. O objetivo é fornecer insights estratégicos para mitigar riscos climáticos e otimizar o planejamento agrícola, permitindo ações preventivas contra geadas ou calor excessivo.
 
-## **Objetivo do Projeto**
+## Principais Insights e Análise de Dados
 
-Este projeto do Alura teve como objetivo principal analisar o comportamento histórico de visitação dos clientes dos restaurantes "Chimi & Churri" e "Assa Frão" para identificar padrões, sazonalidade e, o mais importante, fornecer uma previsão de demanda para os próximos 14 dias.
+A análise revelou perfis climáticos distintos para cada propriedade, exigindo estratégias de manejo diferenciadas.
 
-O objetivo final é apoiar a gestão na tomada de decisões operacionais, como o planejamento de escalas de pessoal, a gestão de estoque e a preparação otimizada das cozinhas.
+### 1. Visão Geral da Variação das Temperaturas (2024-2027)
 
----
+| Métrica |  Fazenda 1 (Estável) | Fazenda 2 (Sazonal) | Fazenda 3 (Quente) |
+| :--- | :---: | :---: | :---: |
+| **Média de Temperatura** | **~23.5°C** | **~20.1°C** | **~31.2°C** |
+| **Maior Pico (Verão)** | 26.15°C (Jul/25) | 27.38°C (Mar/25) | 35.69°C (Set/26) |
+| **Menor Pico (Inverno)** | 20.46°C (Jan/25) | 15.21°C (Dez/25) | 26.10°C (Mai/26) |
+| **Variação da Média** |  **Baixa** (Estável) |  **Média** (Ciclos definidos) | **Alta** (Picos extremos) |
 
-## **Principais Insights e Análise de Dados**
 
-### **Visão Geral do Fluxo de Clientes:**
+### 2. Anomalias Identificadas
+* **Fazenda 1:** Apresenta o clima mais comportado. Não foram detectadas anomalias estatísticas graves (outliers > 3 desvios padrão). Ideal para culturas sensíveis a mudanças bruscas.
+* **Fazenda 2:** Identificada maior amplitude térmica. Os meses de final de ano (Dez-Jan) apresentam quedas significativas (~15°C), exigindo atenção para **risco de geada leve**.
+* **Fazenda 3:** Registra picos de calor intenso (>35°C) entre Agosto e Setembro. Alerta para necessidade de **irrigação intensiva** e proteção contra estresse térmico nas lavouras.
 
-* A média de clientes por dia nos dois restaurantes juntos é de **75 pessoas**.
-* O pico máximo de clientes combinados observado foi de **205**.
-* O restaurante **"Assa Frão"** apresentou o maior pico de clientes em um único dia, com **139 clientes**.
-* O restaurante **"Chimi & Churri"** registrou um máximo de **128 clientes** em um único dia.
+### 3. Sazonalidade e Tendência
+* **Sazonalidade:** O modelo capturou ciclos anuais claros em todas as unidades.
+    * *Fazenda 1:* Ciclo suave.
+    * *Fazenda 2:* Ciclo pegando temperaturas mais baixas e mais alta.
+    * *Fazenda 3:* Ciclo de calor crescente no segundo semestre.
+* **Tendência:** A análise de longo prazo (1963-2024) projetada para 2027 mostra uma leve **tendência de aquecimento** gradual nas Fazendas 1 e 3, consistente com mudanças climáticas regionais.
 
-### **Identificação de Anomalias (Outliers):**
+##  Metodologia e Modelagem
+O projeto seguiu um pipeline rigoroso de **Time Series Forecasting**:
 
-* Foram detectados e isolados (usando Z-Score) dias com um fluxo de clientes significativamente acima ou abaixo do padrão.
-* A análise dessas anomalias será crucial para entender se eventos externos (como feriados ou datas comemorativas) influenciam a demanda de forma atípica, permitindo que a gestão se prepare para ocasiões semelhantes no futuro.
+1.  **Coleta e Tratamento:** Limpeza de dados históricos e indexação temporal (`datetime`) para garantir a continuidade da série (freqüência mensal `MS`).
+2.  **Análise Exploratória (EDA):** Decomposição da série em *Tendência*, *Sazonalidade* e *Resíduos* para entender o comportamento base.
+3.  **Modelagem Preditiva:**
+    * Utilização do **Statsmodels** para criar modelos **SARIMA** (Seasonal AutoRegressive Integrated Moving Average).
+    * Ajuste de parâmetros (p,d,q) baseado na autocorrelação (ACF/PACF).
+4.  **Validação:** Monitoramento da métrica de erro MAE e MSE.
 
-### **Sazonalidade e Tendência (Série Temporal):**
+##  Resultado e Previsão
+As previsões indicam cenários de estabilidade para a Fazenda 1, mas exigem intervenção de gestão para as Fazendas 2 e 3.
+* **Entrega:** Tabelas completas com a previsão mês a mês para os próximos 36 meses foram geradas.
+* **Ação Recomendada:**
+    * *Fazenda 2:* Planejar plantio de inverno com variedades resistentes ao frio.
+    * *Fazenda 3:* Reforçar sistema hídrico para os meses de Setembro/Outubro.
 
-* A série temporal diária foi decomposta (utilizando `statsmodels.tsa.seasonal.seasonal_decompose`) para isolar a **Tendência**, **Sazonalidade** e **Resíduos**.
-* A análise revelou que o fluxo de clientes possui um **claro padrão sazonal semanal** (o que é esperado para o segmento de restaurantes, variando conforme o dia da semana).
-* A Tendência ao longo do período analisado (2016 - 2017) pode ser observada para guiar estratégias de crescimento de longo prazo.
+##  Tecnologias Utilizadas
+* **Manipulação de Dados:** Pandas
+* **Visualização:** Matplotlib 
+* **Modelagem Estatística:** Statsmodels (ARIMA/SARIMA)
 
----
 
-## **Metodologia e Modelagem**
 
-### **Tratamento de Dados:**
-
-Os dados foram tratados e padronizados, convertendo o índice para o formato de data (**datetime**) e realizando a **Interpolação Linear** para preencher os poucos valores faltantes (NaN) de forma a preservar a estrutura da série temporal.
-
-### **Engenharia de Features:**
-
-Foram extraídas informações como o **Dia da Semana** e realizada a união com uma tabela de **Datas Comemorativas/Feriados** para melhor contextualizar os dados e a análise de outliers.
-
-### **Modelagem de Previsão:**
-
-* Foi utilizado o modelo de **Suavização Exponencial (Exponential Smoothing - Holt-Winters)** com o componente **Sazonal Aditivo** (`seasonal = 'additive'`, `seasonal_periods = 7`). Este modelo é robusto para séries com tendência e sazonalidade bem definidas.
-* O modelo foi treinado com os dados históricos para gerar uma previsão confiável.
-
----
-
-## **Resultado e Previsão para Stakeholders**
-
-### **Previsão de 14 Dias:**
-
-O modelo gerou uma previsão de fluxo de clientes para os próximos 14 dias para ambos os restaurantes.
-
-### **Formato de Comunicação:**
-
-A previsão final foi exportada para um arquivo Excel (**tabela previsao para os proximos 14 dias.xlsx**) para facilitar o consumo e a utilização pelos gestores.
-
----
-
-## **Tecnologias Utilizadas**
-
-* **Python**
-* **Pandas** (Tratamento e manipulação de dados)
-* **Matplotlib/Plotly** (Visualização e gráficos de diagnóstico)
-* **Scipy.stats** (Cálculo de Z-Score para detecção de Outliers)
-* **Statsmodels.tsa.holtwinters** (Modelagem de Séries Temporais)
