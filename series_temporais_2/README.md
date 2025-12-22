@@ -25,7 +25,7 @@ A análise revelou perfis climáticos distintos para cada propriedade, exigindo 
 ### 3. Sazonalidade e Tendência
 * **Sazonalidade:** O modelo capturou ciclos anuais claros em todas as unidades.
     * *Fazenda 1:* Ciclo suave.
-    * *Fazenda 2:* Ciclo "em V", com inverno e verão bem marcados.
+    * *Fazenda 2:* Ciclo pegando temperaturas mais baixas e mais alta.
     * *Fazenda 3:* Ciclo de calor crescente no segundo semestre.
 * **Tendência:** A análise de longo prazo (1963-2024) projetada para 2027 mostra uma leve **tendência de aquecimento** gradual nas Fazendas 1 e 3, consistente com mudanças climáticas regionais.
 
@@ -50,5 +50,6 @@ As previsões indicam cenários de estabilidade para a Fazenda 1, mas exigem int
 * **Manipulação de Dados:** Pandas
 * **Visualização:** Matplotlib 
 * **Modelagem Estatística:** Statsmodels (ARIMA/SARIMA)
+
 
 
