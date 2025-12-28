@@ -6,8 +6,16 @@ import pandas as pd
 from prophet.plot import plot_plotly
 # %%
 
+import os # <--- Não esqueça de garantir que importou 'os' no começo do arquivo, ou adicione aqui
+
 def load_model():
-    with open('../modelo/modelo_prophet.json', 'r') as file_in:
+    # Pega a pasta onde o App.py está
+    diretorio_atual = os.path.dirname(os.path.abspath(__file__))
+    
+    # Monta o caminho voltando uma pasta e entrando em 'modelo'
+    caminho_modelo = os.path.join(diretorio_atual, '..', 'modelo', 'modelo_prophet.json')
+    
+    with open(caminho_modelo, 'r') as file_in:
         modelo = model_from_json(json.load(file_in))
     return modelo
 
