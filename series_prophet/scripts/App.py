@@ -48,6 +48,19 @@ if st.session_state.previsao_feita:
     st.plotly_chart(fig)
 
 
+    previsao = st.session_state['dados_previsao']
+    tabela_previsao = previsao[['ds', 'yhat']].tail(dias)
+    tabela_previsao.columns = ['Data (Dia/Mês/Ano)', 'O3 (ug/m3)']
+    tabela_previsao['Data (Dia/Mês/Ano)'] = tabela_previsao['Data (Dia/Mês/Ano)'].dt.strftime('%d-%m-%Y')
+    tabela_previsao['O3 (ug/m3)'] = tabela_previsao['O3 (ug/m3)'].round(2)
+    tabela_previsao.reset_index(drop=True, inplace=True)
+    st.write('Tabela contendo as previsões de ozônio (ug/m3) para os próximos {} dias:'.format(dias))
+    st.dataframe(tabela_previsao, height=300)
+
+    
+
+    csv = tabela_previsao.to_csv(index=False)
+    st.download_button(label='Baixar tabela como csv', data=csv, file_name='previsao_ozonio.csv', mime='text/csv')
 
 
 
