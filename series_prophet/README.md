@@ -1,5 +1,12 @@
 # Previsão de Qualidade do Ar: Análise e Forecasting de Níveis de Ozônio
 
+## 🔗 Acesso Online (Deploy)
+Você pode interagir com o modelo e gerar previsões em tempo real diretamente pelo navegador, sem necessidade de instalação:
+
+### [👉 Clique aqui para acessar a Aplicação Web](https://estudos-praticos-nchbzs8rwnmappicatt4b2j.streamlit.app/)
+
+---
+
 ## Objetivo do Projeto
 
 Desenvolver um modelo de Ciência de Dados capaz de analisar o histórico de concentração de ozônio ($O_3$) e gerar previsões para os próximos **365 dias**. O objetivo é fornecer insights estratégicos para órgãos de controle ambiental e saúde pública, permitindo o monitoramento antecipado de picos de poluição e a emissão de alertas preventivos para a população.
@@ -53,3 +60,4 @@ As previsões fornecem um cenário claro para tomada de decisão, acessível via
 * **Visualização:** Plotly (Gráficos interativos)
 * **Modelagem Estatística:** Facebook Prophet
 * **Deploy:** Streamlit
+
