@@ -1,9 +1,5 @@
 # Análise Estatística Inferencial: Testes de Hipótese em Negócios e Saúde
 
-**Acesso ao Notebook de Análise**
-Você pode visualizar o código completo e os gráficos gerados diretamente no GitHub:
-**[Clique aqui para acessar o Jupyter Notebook](./estatistica.ipynb)**
-
 ## Objetivo do Projeto
 Aplicar rigor estatístico na tomada de decisão estratégica, utilizando inferência para validar hipóteses em cenários de **Marketing (Teste A/B/C)** e **Saúde (Eficácia Clínica)**. O objetivo é demonstrar como ir além da análise exploratória básica, garantindo que as diferenças observadas entre grupos ou correlações entre variáveis sejam estatisticamente significativas (p-valor < 0.05) e não fruto do acaso.
 
@@ -46,4 +42,25 @@ O projeto seguiu um pipeline rigoroso de validação estatística:
     * **Normalidade:** Teste de Shapiro-Wilk (para decidir entre testes paramétricos ou não-paramétricos).
     * **Homocedasticidade:** Teste de Levene (validação de variâncias iguais entre grupos).
 2.  **Testes de Comparação de Grupos:**
-    * **ANOVA One-Way
+    * **ANOVA One-Way:** Para comparar médias de 3+ grupos independentes.
+    * **Kruskal-Wallis:** Alternativa não-paramétrica quando a normalidade não é atendida.
+    * **Tukey HSD:** Para identificar exatamente *quais* grupos diferem entre si.
+3.  **Análise de Categorias:**
+    * **Chi-Quadrado e Fisher:** Para testar independência entre variáveis categóricas.
+4.  **Correlações:**
+    * **Pearson, Spearman e Kendall:** Seleção dinâmica baseada na natureza dos dados (lineares vs. monotônicos).
+
+## Resultado e Ação Recomendada
+
+As análises fornecem direcionamentos claros baseados em dados comprovados:
+
+* **Marketing:** Redirecionar orçamento de mídia para trailers **Futuristas/Sci-Fi** em campanhas de topo de funil, dado seu poder superior de retenção.
+* **Produto:** Priorizar iniciativas que aumentem a pontuação de **Satisfação do Cliente (CSAT)**, pois foi provado estatisticamente que esta métrica é uma alavanca direta para o Engajamento com a marca.
+* **Clínico:** Manter o protocolo de tratamento atual para ansiedade, pois os dados comprovam eficácia contínua e não apenas pontual.
+
+## Tecnologias Utilizadas
+
+* **Linguagem:** Python
+* **Manipulação de Dados:** Pandas
+* **Estatística Avançada:** `scipy.stats`, `statsmodels`
+* **Visualização:** Seaborn, Matplotlib
