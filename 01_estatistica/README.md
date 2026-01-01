@@ -1,1 +1,2 @@
-..
+Análise Estatística Inferencial e Testes de Hipótese
+Este projeto reúne um conjunto de análises estatísticas rigorosas aplicadas a diferentes contextos de negócio e saúde. O objetivo principal é demonstrar como a inferência estatística pode ser utilizada para validar hipóteses, comparar grupos e medir associações entre variáveis, indo além da análise exploratória básica para fornecer conclusões com significância estatística.
