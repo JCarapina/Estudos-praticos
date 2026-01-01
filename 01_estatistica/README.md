@@ -62,5 +62,5 @@ As análises fornecem direcionamentos claros baseados em dados comprovados:
 
 * **Linguagem:** Python
 * **Manipulação de Dados:** Pandas
-* **Estatística Avançada:** `scipy.stats`, `statsmodels`
+* **Estatística Avançada:** `scipy.stats`, `statsmodels` e `pingouin`
 * **Visualização:** Seaborn, Matplotlib
