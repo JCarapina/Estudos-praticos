@@ -6,8 +6,6 @@ INSERT INTO colaboradores (ID, Nome, Cargo, DataContratacao, Telefone, Email, Ru
 (5, 'João Pereira', 'Atendente', '2022-09-05', '515558765', 'joao.pereira@email.com', 'Rua das flores - 210', 'Centro', 'São Paulo', 'SP', '20000001'),
 (6, 'Inês Lima', 'Barista', '2022-04-02', '615553421', 'ines.lima@email.com', 'Rua das Entregas - 280', 'Entregas Rápidas', 'São Paulo', 'SP', '90000001'),
 (7, 'Antonio Artur', 'Entregador', '2023-01-10', '568442577', 'antonio.artur@email.com', 'Rua das flores - 210', 'Centro', 'São Paulo', 'SP', '20000001');
-SELECT * FROM colaboradores;
-
 
 INSERT INTO fornecedores (ID, Nome, Contato, Telefone, Email, Rua, Bairro, Cidade, Estado, CEP) VALUES
 (1, 'Café do Brasil Ltda.', 'Maria Oliveira', '115551234', 'cafebrasil@email.com', 'Rua do Café - 123', 'Centro', 'São Paulo', 'SP', '01000000'),
@@ -16,8 +14,6 @@ INSERT INTO fornecedores (ID, Nome, Contato, Telefone, Email, Rua, Bairro, Cidad
 (4, 'Padaria da Cidade', 'Sofia Alves', '415552345', 'padariacidade@email.com', 'Rua dos Pães - 101', 'Pão Quentinho', 'Salvador', 'BA', '40000000'),
 (5, 'Fornecedor de Chocolate', 'Rui Lima', '515558765', 'chocolatelovers@email.com', 'Rua do Cacau - 210', 'Chocolateira', 'Florianópolis', 'SC', '88000000'),
 (6, 'Distribuidora de Bebidas', 'Ana Pereira', '615553421', 'bebidaspremium@email.com', 'Avenida das Garrafas - 35', 'Copo Cheio', 'Porto Alegre', 'RS', '90000000');
-SELECT * FROM fornecedores;
-
 
 INSERT INTO produtos (ID, Nome, Descricao, Preco, Categoria) VALUES
 (1, 'Espresso', 'Um shot de espresso forte e encorpado.', 2.50, 'Café'),
@@ -50,8 +46,6 @@ INSERT INTO produtos (ID, Nome, Descricao, Preco, Categoria) VALUES
 (28, 'Croissant de Amêndoa', 'Croissant recheado com chocolate belga.', 3.50, 'Sobremesa'),
 (29, 'Tofu Scramble', 'Scramble de tofu com vegetais e espinafre.', 6.50, 'Sobremesa'),
 (30, 'Salada de Atum', 'Salada de atum com feijão e pimentão.', 8.00, 'Almoço');
-SELECT * FROM produtos;
-
 
 INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (1, 'Maria Silva', '115551234', 'maria.silva@email.com', 'Rua das Flores, 123, Cidade A'),
@@ -63,7 +57,6 @@ INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (7, 'Luisa Ferreira', '715559876', 'luisa.ferreira@email.com', 'Rua das Palmeiras, 789, Cidade G'),
 (8, 'Carlos Gomes', '815552345', 'carlos.gomes@email.com', 'Avenida dos Ventos, 123, Cidade H'),
 (9, 'Marta Ribeiro', '915555432', 'marta.ribeiro@email.com', 'Travessa das Maravilhas, 56, Cidade I');
-
 INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (10, 'Ana Maria Silva', '1515557890', 'ana.silva@email.com', 'Rua Central, 567, Cidade O');
 INSERT INTO clientes (ID, Nome, Telefone, Endereco) VALUES
@@ -72,7 +65,6 @@ INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (12, 'João Carlos Rodrigues', '1615552345', 'joao.rodrigues@email.com', 'Praça dos Poetas, 321, Cidade P');
 INSERT INTO clientes (ID, Nome, Telefone, Endereco) VALUES
 (13, 'Isabela Pereira', '1115558765', 'Rua das Araras, 789, Cidade K');
-
 INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (14, 'Isabel Gonçalves', '1715558765', 'isabel.goncalves@email.com', 'Alameda das Gaivotas, 654, Cidade Q'),
 (15, 'Ricardo Ferreira', '1815554321', 'ricardo.ferreira@email.com', 'Avenida da Paz, 987, Cidade R'),
@@ -83,7 +75,6 @@ INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (21, 'Carolina Lima', '2315558765', 'carolina.lima@email.com', 'Avenida da Felicidade, 654, Cidade W'),
 (22, 'Pedro Almeida', '2415554321', 'pedro.almeida@email.com', 'Rua das Estrelas, 123, Cidade X'),
 (23, 'Inês Gonçalves', '2515551234', 'ines.goncalves@email.com', 'Travessa das Maravilhas, 234, Cidade Y');
-
 INSERT INTO clientes (ID,Nome, Telefone, Endereco) VALUES
 (24, 'Rui Santos', '1215554321', 'Alameda das Estrelas, 654, Cidade L');
 INSERT INTO clientes (ID,Nome, Telefone, Email, Endereco) VALUES
@@ -93,4 +84,9 @@ INSERT INTO clientes (ID,Nome, Telefone, Endereco) VALUES
 INSERT INTO clientes (ID,Nome, Telefone, Endereco) VALUES
 (27, 'Paulo Sousa', '1415555678', 'Travessa das Marés, 876, Cidade N');
 
+SELECT * FROM colaboradores;
+SELECT * FROM fornecedores;
+SELECT * FROM produtos;
 SELECT * FROM clientes;
+SELECT * FROM pedidos;
+SELECT * FROM itens_pedido;
