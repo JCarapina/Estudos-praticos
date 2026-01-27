@@ -5,4 +5,15 @@ FROM Clientes
 WHERE ID = (
     SELECT IdCliente
     FROM Pedidos
-    WHERE DataHoraPedido = '2023-01-02 08:15:00')
+    WHERE DataHoraPedido = '2023-01-02 08:15:00');
+
+---
+-- OBS WHERE ID "=" Retorna o Unico valor, ID IN Retorna todos valores
+-- 4 Listando clientes que fizeram pedidos em janeiro de 2023.
+SELECT Nome
+FROM Clientes
+WHERE ID IN (
+    SELECT IdCliente
+    FROM Pedidos
+    WHERE strftime('%m', DataHoraPedido) = '01'
+);
