@@ -17,3 +17,15 @@ WHERE ID IN (
     FROM Pedidos
     WHERE strftime('%m', DataHoraPedido) = '01'
 );
+
+
+-- 5. Subquery com Having
+ --Saber os produtos que tem um preço acima da média de todos os produtos cadastrados.
+SELECT Nome, Preco
+FROM Produtos
+GROUP BY Nome, Preco
+HAVING Preco > (
+    SELECT AVG(Preco)
+    FROM Produtos
+);
+
