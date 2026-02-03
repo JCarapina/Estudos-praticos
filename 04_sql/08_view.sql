@@ -9,3 +9,4 @@ ON p.Id = ip.IdPedido
 GROUP BY p.id, c.Nome
 ORDER BY Total DESC;
 
+SELECT * FROM GastoPorCliente;
