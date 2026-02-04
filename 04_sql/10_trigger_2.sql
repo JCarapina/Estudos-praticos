@@ -16,4 +16,4 @@ VALUES (452, 28, '2023-10-07 14:35:00', 'Em Andamento');
 INSERT INTO Itens_pedido (IDPedido, IDProduto, Quantidade, PrecoUnitario) VALUES (452, 10, 1, 5.0),
          (452, 31, 1, 12.50);
 
-SELECT * FROM FaturamentoDiario
+SELECT * FROM FaturamentoDiario;

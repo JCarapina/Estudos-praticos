@@ -45,7 +45,8 @@ INSERT INTO produtos (ID, Nome, Descricao, Preco, Categoria) VALUES
 (27, 'Batido de Morango', 'Batido cremoso de morango com chantilly.', 4.50, 'Bebidas'),
 (28, 'Croissant de Amêndoa', 'Croissant recheado com chocolate belga.', 3.50, 'Sobremesa'),
 (29, 'Tofu Scramble', 'Scramble de tofu com vegetais e espinafre.', 6.50, 'Sobremesa'),
-(30, 'Salada de Atum', 'Salada de atum com feijão e pimentão.', 8.00, 'Almoço');
+(30, 'Salada de Atum', 'Salada de atum com feijão e pimentão.', 8.00, 'Almoço'),
+(31, 'Lasanha à Bolonhesa', 'Lasanha tradicional com molho bolonhesa.', 8.50, 'Almoço');
 
 INSERT INTO clientes (ID, Nome, Telefone, Email, Endereco) VALUES
 (1, 'Maria Silva', '115551234', 'maria.silva@email.com', 'Rua das Flores, 123, Cidade A'),
